@@ -1,0 +1,70 @@
+def Addition(a,b):
+    return a+b
+def subtraction(a,b):
+    return a-b
+def multiplication(a,b):
+    return a*b
+def division(a,b):
+    return a/b
+def modulodivision(a,b):
+    return a%b
+
+def userinput(n):
+    if n==1:
+        print("The addition of two numbers is:",Addition(a,b))
+    elif n==2:
+        print("The subtraction of two numbers is:",subtraction(a,b))
+    elif n==3:
+        print("The multiplication  of two numbers is:",multiplication(a,b))
+    elif n==4:
+        print("The division of two numbers is:",division(a,b))
+    elif n==5:
+        print("The Modulo Division of two numbers is:",modulodivision(a,b))
+
+def chatbot_response(user_input):
+    user_input = user_input.lower()  # Convert user input to lowercase for case-insensitive matching
+    
+    # Define some predefined patterns and responses
+    greetings = ["hello", "hi", "hey", "howdy"]
+    operationss= ["subtraction", "multiplication","division","Modulo Division","Addition",]
+    
+    if any(greeting in user_input for greeting in greetings):
+        print("chatbot:Hello! How can I help you today?")
+    elif "addition" in user_input:
+        print("chatbot:Sure, can you give me operands")
+        global a,b
+        #taking operands from the user
+        a,b=map(int,input().split())
+        print("which operation do you want to perform,please select a number")
+        print("1.Addition \n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulo Division")
+        #taking n from the user for performing the operations
+        n=int(input())
+        #calling function for performing operations
+        userinput(n)
+    
+    elif any(keyword in user_input for keyword in operationss):
+        print("chatbot:Sure, can you give me operands")    
+        a,b=map(int,input().split())
+        print("which operation do you want to perform,please select a number")
+        print("1.Addition \n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulo Division")
+        n=int(input())
+        userinput(n)
+    
+    elif "help" in user_input:
+        print("I can perform mathematical operations. Just ask me about it!")
+    else:
+        print("I'm sorry, I don't understand. Please ask another question.")
+
+   
+   
+   
+print("Chatbot: Hello! How can I assist you today?")
+while True:
+    #taking input from the user
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+    #calling function
+    response = chatbot_response(user_input)
+    
