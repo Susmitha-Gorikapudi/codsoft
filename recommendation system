@@ -1,0 +1,12 @@
+print("I can recomend movies based on your interest")
+print("Give me your input")
+s=input()
+s=s.lower()
+if(s=="comedy"):
+    print("Here Are List of movies:\n*Jathiratnalu\n*Raja the Great\n*F2")
+elif(s=="action"):
+    print("Here Are List of movies:\n*Bahubali\n*Aravinda Sametha\n*Rebal")
+elif(s=="thriller"):
+    print("Here Are List of movies:\n*Kanchana\n*Ganga\n*Virupaksha")
+else:
+    print("please provide th options in 'comedy','action','thriller'")
